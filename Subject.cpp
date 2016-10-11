@@ -1,6 +1,26 @@
 #include "Subject.h"
 
+#include <Windows.h>
+
 typedef std::map<EVENTTYPE, std::list<IObserver*>*>::iterator it_eEVENTTYPEpList;
+
+bool Subject::Init() {
+	MessageBox(0, L"Subject::Init", L"out", MB_OK);
+
+	return true;
+}
+
+void Subject::UnInit() {
+	MessageBox(0, L"Subject::UnInit", L"out", MB_OK);
+
+	it_eEVENTTYPEpList mIt = m_observerMap.begin();
+	while (mIt != m_observerMap.end()) {
+		if (mIt->second != NULL) {
+			delete mIt->second;
+		}
+		mIt++;
+	}
+}
 
 bool Subject::AddObserver(EVENTTYPE eventType, IObserver *observer) {
 	it_eEVENTTYPEpList mapIt(m_observerMap.find(eventType));
@@ -13,7 +33,7 @@ bool Subject::AddObserver(EVENTTYPE eventType, IObserver *observer) {
 	std::list<IObserver*>::iterator listIt(obList->begin());
 	while (listIt != obList->end()) {
 		if ((int)(*listIt) == (int)observer) {
-			std::cout << "重复添加订阅者" << std::endl;
+			//std::cout << "重复添加订阅者" << std::endl;
 			return false;
 		}
 
@@ -44,7 +64,7 @@ bool Subject::DelObserver(EVENTTYPE eventType, IObserver *observer) {
 	return false;
 }
 
-void Subject::Notify(EVENTTYPE eventType, MSG notifyContext) {
+void Subject::Notify(EVENTTYPE eventType, GAMEMSG notifyContext) {
 	it_eEVENTTYPEpList mapIt(m_observerMap.find(eventType));
 	if (mapIt == m_observerMap.end()) {
 		return;

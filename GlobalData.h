@@ -1,10 +1,12 @@
 #ifndef GLOBALDATA
 #define GLOBALDATA
 
-#include "IGlobalData.h"
+#include "SingletonTemplate.h"
 
-class GlobalData : public IGlobalData {
-	 
+class GlobalData : public SingletonTemplate<GlobalData> {
+public:
+	bool Init();
+	void UnInit();
 };
 
-#endif
+#endif //GLOBALDATA

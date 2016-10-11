@@ -12,17 +12,14 @@
     <Filter Include="代码\EventModule">
       <UniqueIdentifier>{73eb3f3a-7cfa-48e2-86cd-7d748ecebd76}</UniqueIdentifier>
     </Filter>
-    <Filter Include="代码\GameModule">
-      <UniqueIdentifier>{ea7f169a-2de2-41d6-9c03-a74747b90200}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="代码\GlobalModule">
+    <Filter Include="代码\GlobalData">
       <UniqueIdentifier>{dd9551bc-fdd6-4022-a9b1-f3a13c93d889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="代码\Common">
+      <UniqueIdentifier>{fdc0f8d8-d912-4537-ad56-e3663cddf33e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ISubject.h">
-      <Filter>代码\EventModule</Filter>
-    </ClInclude>
     <ClInclude Include="IObserver.h">
       <Filter>代码\EventModule</Filter>
     </ClInclude>
@@ -33,10 +30,10 @@
       <Filter>代码\EventModule</Filter>
     </ClInclude>
     <ClInclude Include="GlobalData.h">
-      <Filter>代码\GlobalModule</Filter>
+      <Filter>代码\GlobalData</Filter>
     </ClInclude>
-    <ClInclude Include="IGlobalData.h">
-      <Filter>代码\GlobalModule</Filter>
+    <ClInclude Include="SingletonTemplate.h">
+      <Filter>代码\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -44,7 +41,7 @@
       <Filter>代码\EventModule</Filter>
     </ClCompile>
     <ClCompile Include="GlobalData.cpp">
-      <Filter>代码\GlobalModule</Filter>
+      <Filter>代码\GlobalData</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>代码</Filter>

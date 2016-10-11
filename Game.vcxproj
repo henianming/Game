@@ -71,10 +71,9 @@
   <ItemGroup>
     <ClInclude Include="EventDef.h" />
     <ClInclude Include="GlobalData.h" />
-    <ClInclude Include="IGlobalData.h" />
+    <ClInclude Include="SingletonTemplate.h" />
     <ClInclude Include="Subject.h" />
     <ClInclude Include="IObserver.h" />
-    <ClInclude Include="ISubject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,8 @@
 ﻿#include <windows.h>
 
+#include "GlobalData.h"
+#include "Subject.h"
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 	switch (msg) {
 	case WM_KEYUP:
@@ -58,6 +61,19 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hInstancePrev, LPSTR cmdLine
 
 	ShowWindow(hWnd, showWindowCommand);
 
+	//初始化全局数据
+	GlobalData::GetInstance()->Init();
+
+	//初始化事件模块
+	Subject::GetInstance()->Init();
+
+	//初始化游戏内容模块
+
 	MsgLoop();
+
+	//逆向释放
+	Subject::GetInstance()->UnInit();
+	GlobalData::GetInstance()->UnInit();
+
 	return 0;
 }

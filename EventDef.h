@@ -6,7 +6,7 @@ enum EVENTTYPE {
 	EVENTTYPE_2
 };
 
-struct MSG {
+struct GAMEMSG {
 	union {
 		
 	}msgContext;
